@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
       Ionic Blank
@@ -7,9 +7,58 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the
-    <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <p>{{ text }}</p>
+  <button color="primary" ion-button menuToggle (click)="onChangeText()">
+    Change Text
+  </button>
+</ion-content> -->
+
+<ion-header no-border>
+  <ion-toolbar color="primary">
+    <ion-title>Budget Planner</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-6 offset-md-3>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>New Expense</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label floating>Expense Reason</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Expense Amount</ion-label>
+              <ion-input type="number"></ion-input>
+            </ion-item>
+            <div margin-vertical text-right>
+              <button ion-button icon-start (click)="saveAdd()">
+                <ion-icon name="add-circle"> </ion-icon>
+                Add Expense
+              </button>
+              <button
+                ion-button
+                color="danger"
+                icon-start
+                outline
+                (click)="clear()"
+              >
+                <ion-icon name="close"></ion-icon>
+                Clear
+              </button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-title>I'm a footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
